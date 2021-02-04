@@ -1,7 +1,9 @@
 ##Printing the Tic Tac Toe Board ###
 ### The Board resembles the keyboard number position:###
 
-Board = {'7':' ' , '8' : ' ' , '9':' ','4':' ','5':' ','6':' ', '1':' ' , '2': ' ' ,'3':' '}
+Board = {'7':' ' ,'8':' ' ,'9':' ',
+         '4':' ' ,'5':' ' ,'6':' ',
+         '1':' ' ,'2':' ' ,'3':' '}
 
 def printboard(Board):
 
@@ -24,7 +26,7 @@ def game():
     count = 0
 
 
-    for i in range(10):
+    for i in range(15):
         printboard(Board)
         print(f"Its your turn {turn} ,What is your position number?")
         move = input()
@@ -82,10 +84,14 @@ def game():
                 print("The winner is " +  turn)
                 break 
 
-    
-        if count == 9 :
+   # if all the 9 spaces are not empty and no winners then declare that the game is over
+   # and its a tie  and move to retart message 
+
+        
+
+        if  all(x != " " for x in Board.values()):
             print("***********Game Over*********")
-            print("Its a Tie!")
+            print("Its a Draw!\n")
             break
     
         if turn == 'X':
