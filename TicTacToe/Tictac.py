@@ -29,8 +29,7 @@ def game():
         print(f"Its your turn {turn} ,What is your position number?")
         move = input()
 
-        print("This is board move"+ Board[move])
-
+        
         if Board[move] == ' ':
             Board[move] = turn
             count += 1
@@ -84,7 +83,7 @@ def game():
                 break 
 
     
-        if count == 9 and :
+        if count == 9 :
             print("***********Game Over*********")
             print("Its a Tie!")
             break
@@ -101,7 +100,7 @@ def game():
 
 
 
-    restart = input("Do you want to restart the game 'Y' or 'N' ?")
+    restart = input("Do you want to restart the game 'Y' or 'N' ?").lower()
     if restart == 'y' :
         for key in board_keys:
             Board[key] = ' '
